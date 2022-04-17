@@ -10,27 +10,36 @@
                     69, 64, 66, 55, 52, 61,
                     46, 31, 57, 52, 44, 18,
                     41, 53, 55, 61, 51, 44];
+      
+      function printAndGetHighScore(score) {
+        var highScore = 0;              
+        var output;
 
-      var highScore = 0;              
-      var output;
-      for (var i = 0; i < scores.length; i++) {
-        output = "Bubble solution #" + i + "score: " + scores[i];
-        console.log(output);
-        if (scores[i] > highScore) {
-          highScore = scores[i];
+        for (var i = 0; i < scores.length; i++) {
+          output = "Bubble solution #" + i + "score: " + scores[i];
+          console.log(output);
+          if (scores[i] > highScore) {
+            highScore = scores[i];
+          }
         }
+        return highScore;
       }
 
+      function getBestResults(score, highScore) {
+        var bestSolutin = [];
+        for (var i = 0; i < scores.length; i++) {
+          if (scores[i] == highScore) {
+            bestSolutin.push(i);
+          }
+        }
+        return bestSolutin;
+      }
+
+      var highScore = printAndGetHighScore(scores);
       console.log("Bubbles tests: " + scores.length);
       console.log("Highest bubble score: " + highScore);
-      
-      var bestSolutin = [];
-      for (var i = 0; i < scores.length; i++) {
-        if (scores[i] == highScore) {
-          bestSolutin.push(i);
-        }
-      }
 
+      var bestSolutin = getBestResults(scores, highScore);
       console.log("Solutions width the highest score: " + bestSolutin);
     </script>
   </head>
