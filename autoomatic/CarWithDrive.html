@@ -14,13 +14,13 @@
           milage: 88000,
           started: false,
           start: function() {
-            started = true;
+            this.started = true;
           },
           stop: function() {
-            stop = false;
+            this.started = false;
           },
           drive: function() {
-            if (started) {
+            if (this.started) {
               alert("Zoom zoom");
             } else {
               alert("You need start the engine first.");
@@ -29,6 +29,9 @@
         };
         
         fiat.drive();
+        fiat.start();
+        fiat.drive();
+        fiat.stop();
       </script>
     </head>
     <body></body>
