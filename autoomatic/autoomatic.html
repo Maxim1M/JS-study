@@ -27,7 +27,15 @@
               convertible: convertible[rand6];
               mileage: 0
             }
+            return car;
           }
+
+          function displayCar(car) {
+            console.log("You new is a " + car.year + "" + car.make + "" + car.model); 
+          }
+
+          var carToSell = makeCar();
+          displayCar(carToSell);
         </script>
     </head>
     <body></body>
